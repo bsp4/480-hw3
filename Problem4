@@ -1,0 +1,12 @@
+#4 Compute the determinant of a 4x4 matrix of double precision floating point numbers.
+
+import numpy
+def mat1(a,b,c,d):
+    mat = [
+           [a*random(),b*random(),c*random(),d*random()],
+           [a*random(),b*random(),c*random(),d*random()],
+           [a*random(),b*random(),c*random(),d*random()],
+           [a*random(),b*random(),c*random(),d*random()]
+    ]
+    return numpy.linalg.det(mat)
+timeit("mat1(1,2,3,4)") -- 625 loops, best of 3: 270 µs per loop
