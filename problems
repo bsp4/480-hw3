@@ -9,3 +9,13 @@ timeit("sumsqr(1000)") -- 625 loops, best of 3: 1.12 ms per loop
 timeit("sumsqr(5000)") -- 125 loops, best of 3: 5.54 ms per loop
 timeit("sumsqr(10000)") -- 25 loops, best of 3: 11.2 ms per loop
 
+%cython
+def sumsqr1(n):
+    cdef int i, s = 0
+    for i in range(n):
+        s += i*i
+    return s
+timeit("sumsqr1(1000)") -- 625 loops, best of 3: 1.4 µs per loop
+timeit("sumsqr1(5000)") -- 625 loops, best of 3: 6 µs per loop
+timeit("sumsqr1(10000)") -- 625 loops, best of 3: 11.8 µs per loop
+
