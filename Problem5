@@ -1,0 +1,9 @@
+#5 Multiply a 4x4 matrix of double precision floating point numbers times another 4x4 matrix.
+
+import numpy
+def mat(a,b,c,d):
+    mtrx = numpy.matrix([[a,b,c,d],[d,c,b,a], [c,d,a,b], [b,a,d,c]]) * random()
+    return mtrx * mtrx
+timeit("mat(2,2,5,4)") -- 625 loops, best of 3: 86 µs per loop
+
+
