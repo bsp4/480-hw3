@@ -10,3 +10,11 @@ def mat1(a,b,c,d):
     ]
     return numpy.linalg.det(mat)
 timeit("mat1(1,2,3,4)") -- 625 loops, best of 3: 270 µs per loop
+
+%cython
+import numpy
+cimport numpy
+cdef mat1(a,b,c,d):
+    mat = numpy.matrix([[a,b,c,d],[d,c,b,a], [c,d,a,b], [b,a,d,c]]) * float(a/b)
+    return numpy.linalg.det(mat)
+timeit("mat1(2,2,5,4)") -- 625 loops, best of 3: 164 µs per loop
